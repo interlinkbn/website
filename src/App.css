@@ -809,6 +809,9 @@ body{
     font-size: 48px;
     margin-left: 0;
   }
+  .join-text .join-info{
+    margin-left: 10px;
+  }
 
   /* Contact section */
   .contact-section {
@@ -948,6 +951,9 @@ body{
   }
   .join-image{
     display:none;
+  }
+  .join-text .join-info{
+    margin-left: 10px;
   }
 
   /* Contact section */
@@ -1211,7 +1217,7 @@ body{
     margin-right: auto;
   }
   .join-section{
-    height: 400px;
+    height: 410px;
   }
   .join-image{
     bottom: -5em;
@@ -1517,7 +1523,17 @@ a {
   .goals-section {
     margin-bottom: -200px;
   }
-
+  .join-text .join-info{
+    margin-left: 10px;
+  }
+  .subscribe-section {
+    padding: 50px 20px;
+    background-color: #ffffff;
+    border: 1px solid #c2c0c0;
+    border-radius: 10px;
+    margin: 50px auto;
+    max-width: 400px;
+}
 
 
 
