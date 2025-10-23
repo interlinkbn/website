@@ -21,7 +21,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px;
+  padding: 10px 40px;
   background-color: #ffffff;
   border-bottom: 3.5px solid #e0e0e0;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -57,14 +57,17 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10 px;
+  gap: 10px;
 }
 
 .logo img {
-  height: 120px;
-  width:280px;
-  margin-left: -60px;
+  height: 150px;
+  width:200px;
+  margin-left: -20px;
+  margin-bottom: -10px;
+  margin-top: -10px;
 }
+
 
 
 /* Navigation menu styled as buttons */
@@ -124,6 +127,10 @@ body {
   color: #d4a017;
 }
 
+.right {
+  margin-right: -54%;
+}
+
 .underline-text {
   color: #d4a017;
   position: relative;
@@ -141,7 +148,6 @@ body {
   bottom: -15px; /* Adjust to position the underline right below the text */
   left: 27px; /* Aligns underline with the text */
 }
-
 
 
 
@@ -169,7 +175,7 @@ body {
 .image2 {
   position: absolute;
   top: -25px; /* Adjust to position as needed */
-  right: -10px; /* Adjust to position as needed */
+  right: -35px; /* Adjust to position as needed */
   width: 170%;
   height: 120%;
   
@@ -277,6 +283,7 @@ body {
   padding-right: 20px; /* Adds space between text and right edge */
   text-align:justify;
   text-indent: 1px;
+  margin-top: 60px;
 }
 
 
@@ -284,7 +291,7 @@ body {
 
 /* Goals Section */
 .goals-section {
-  padding: 80px 40px;
+  padding: 10px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -362,7 +369,7 @@ body {
 /* Second (foreground) image styling */
 .image21 {
   position: absolute;
-  top: 60px; /* Adjust to position as needed */
+  top: 80px; /* Adjust to position as needed */
   right: -40px; /* Adjust to position as needed */
   width: 450px;
   height: 350px;
@@ -373,7 +380,7 @@ body {
 
 /* Join Us Section */
 .join-section {
-  padding: 60px 20px;
+  padding: 60px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -445,6 +452,10 @@ body {
   border-radius: 2px;
 }
 
+.join-text {
+  margin-left: 30%;
+}
+
 .join-text p {
   font-size:28px;
   color: #333;
@@ -470,8 +481,7 @@ body {
   justify-content: center; /* Center horizontally */
   flex-direction: column;
   max-width: 115%;
-  min-height: 150px;
-  
+  min-height: 10px;
 }
 
 .email {
@@ -489,6 +499,7 @@ body {
   position: relative;
   width: 550px; /* Set width as needed */
   height: 600px; /* Set height as needed */
+  margin-bottom: -60px;
 }
 a {
     color: #e0b400; /* Set the text color to yellow */
@@ -522,81 +533,162 @@ a {
 
 
 /* Contact Section */
-.contact-section {
-  position: relative; /* Necessary for absolute positioning of the image within this section */
-  padding: 50px;
-  background-color: #faf5ed;
+.contact-wrapper {
+  padding: 40px 10px;
+  background-color: #faf4ec;
+  text-align: center;
+  position: relative;
+
+}
+.contact-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.contact-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.contact-card {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: space-around; 
+  background: #faf4ec;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  min-width: 300px;
+  max-width: 550px;
+  margin: 30px auto 30px;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+}
+
+.contactus-card {
+  align-items: center;
+  background: #faf4ec;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  min-width: 300px;
+  max-width: 550px;
+  margin: 0 auto 20px;
+  position: relative;
+  
 }
 
 .contact-info {
-  max-width: 400px;
-  margin-right: 20px;
+  flex: 1;
+  min-width: 250px;
+  max-width: 500px;
+  background: #faf4ec;
+  padding: 20px;
 }
 
 .contact-info h3 {
-  font-size: rem;
-  margin-bottom: 10px;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .contact-info p {
-  margin: 5px 0;
+  margin: 10px 0;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
 }
 
+
 .contact-info a {
-  color: #d4a017;
+  color: #333;
   text-decoration: none;
 }
 
 .contact-info a:hover {
   text-decoration: underline;
 }
-.linkedin{
-  height: 20px;
-  width: 15px; /* Align the icon with the text */
-}
+
+
 
 /* Contact Form */
 .contact-form {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 15px;
-  width: 100%;
-  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.form-card {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+  background: #faf4ec;
+  padding: 20px;
+
+}
+.form-row{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.form-row input {
+  flex: 1;
+}
+
+
+.error-image {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0; /* remove margin that pushed input smaller */
+  pointer-events: none; /* prevent click issues */
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #faf4ec;
 }
 
 .contact-form textarea {
-  grid-column: 1 / -1;
-  resize: vertical;
+  resize: none;
   height: 100px;
 }
 
 .contact-form button {
-  grid-column: 1 / -1;
-  padding: 10px;
-  background-color: #ffd900;
+  padding: 12px;
+  background: #ffcc00;
   color: #000000;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 1rem;
   cursor: pointer;
-  font-size: 16px;
+  
 }
 .icon {
-  width: 40px; /* Adjust icon size */
-  height: 28px; /* Keep icons square */
-  margin-right: 8px; /* Space between icon and text */
-  vertical-align: middle; /* Align icon with text */
+  width: 45px; /* Adjust icon size */
+  height: 35px; /* Keep icons square */
+}
+.email-icon{ 
+  width: 45px;
+  height: 35px;
+}
+
+.contact-form button:focus{
+  outline: none;
+  background: #ffcc00;
 }
 
 
@@ -604,14 +696,40 @@ a {
 .contact-form button:hover {
   background-color: #ffa060;
 }
+
+.bottomImage-leftSide {
+  position: absolute;
+  bottom: 25%;
+  left: 15%; 
+  transform: translateX(-50%);
+  min-width: 150px;
+  width: 450px;
+  height: auto;
+  z-index: 1;
+  margin-bottom: 20%;
+  opacity: 80%;
+}
+
+.bottomImage-rightSide {
+  position: absolute;
+  bottom: 2px;
+  right: 20px; /* Changed to position on right side */
+  min-width: 150px;
+  width: 500px;
+  height: auto;
+  z-index: 1; /* Consistent with other background image */
+  margin-bottom: 15%;
+  opacity: 80%;
+}
 /* Image positioned at the bottom left */
 .bottom-left-image {
   position: absolute;
-  bottom: 5px;
- left: 400px;
-  width: 275px; /* Adjust size as needed */
-  height:200px;
-  opacity: 0.8; /* Optional opacity */
+  bottom: 8px;
+  left: 20px;
+  width: 275px;
+  height: 200px;
+  opacity: 0.8;
+  z-index: 1;   /* send it behind everything else */
 }
 /* properties of the page body */
 body{
@@ -623,35 +741,126 @@ body{
 
 }
 
- .subscribe {
-	background-image: #faf5ed;
-	box-shadow: 0 0 26px 1px #faf5ed;
-	padding:10px 50px 50px 50px;
-	margin: 3.5em auto 0 auto;
-	border-radius: 20px;
-	text-align: center;
-	width: 280px;
-	min-height: 325px;
-	height:auto;
-	color: #445963;
-	
+.newsletter {
+  background: #faf4ec;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin: 30px auto 0;
+  min-width: 250px;
+  max-width: 550px;
+  margin-bottom: 30px;
+  margin-top: 15px;
 }
 
+
+.newsletter h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+
+.newsletter form {
+  display: flex;
+  gap: 20px;
+}
 /* Iamge:: Email Logo  */
 .subscribe img{
 	width: 100px;
 	height: 100px;
 }
-
-/* Title Card subscribe  */
-.subscribe h2 {
-	text-transform: uppercase;
-	margin-bottom: 0;
-	margin-top: 0;
-	font-size:27px; 
+.newsletter-btn {
+  background-color: #ffcc00; /* Match theme color */
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
 }
-/* Fonts */
+.newsletter-btn:focus{
+  outline: none;
+  background: #ffcc00;
+}
+.newsletter-error-image {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+.newsletter-input-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 
+
+.newsletter-input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  min-width: 100px;
+  background: #faf4ec;
+}
+
+.newsletter-btn:hover {
+  background: #ffa060;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5); /* semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 10px; /* small padding for mobile */
+  box-sizing: border-box;
+}
+
+.modal-content {
+  background-color: #fff; /* white background */
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 300px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  color: #333; /* text color */
+  font-family: Arial, sans-serif;
+}
+
+.modal-content p {
+  color: #222; /* dark text */
+  font-size: 16px;
+  font-weight:700;
+  margin-bottom: 20px;
+}
+
+
+.modal-content button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #ffcc00; /* button background color */
+  color: #fff; /* button text color */
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+  background-color: #ffa060; /* darker on hover */
+}
 
 
 /* properties of the page body */
@@ -661,62 +870,6 @@ body{
 	background-repeat: no-repeat;
 	padding: 0;
 	margin: 0;
-}
-
-/* Subscribe Section */
-.subscribe-section {
-  padding: 50px 20px; /* Add spacing to separate sections */
-  background-color: #ffffff; /* Use a clean white background */
-  border: 1px solid #c2c0c0; /* Light border for separation */
-  border-radius: 10px; /* Rounded corners for aesthetic appeal */
-  margin: 50px auto; /* Add spacing above and below */
-  max-width: 800px; /* Center and restrict the width */
-}
-
-.subscribe-container {
-  text-align: center; /* Center align the content */
-}
-
-.email-logo {
-  width: 60px;
-  height: auto;
-  margin-bottom: 20px; /* Space between the logo and the heading */
-}
-
-.subscribe-section h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.subscribe-section p {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.subscribe-input {
-  width: 100%;
-  max-width: 400px; /* Restrict input width */
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-.subscribe-button {
-  background-color: #ffcc00; /* Match theme color */
-  color: #333;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.subscribe-button:hover {
-  background-color: #ffbb00; /* Slight hover effect */
 }
 
 
@@ -811,7 +964,7 @@ body{
   }
 
   /* Contact section */
-  .contact-section {
+  .contact-wrapper {
     flex-direction: column;
     align-items: center;
     padding: 20px;
@@ -828,6 +981,75 @@ body{
     height: 150px;
     display: none;
   }
+
+  .newsletter-btn:focus{
+    outline: none;
+    background: #ffcc00;
+  }
+  .contact-form button:focus{
+    outline: none;
+    background: #ffcc00;
+  }
+}
+
+@media (hover: none) {
+  .newsletter-btn:hover {
+    background: #ffcc00; /* same as normal */
+  }
+  .contact-form button:hover {
+    background: #ffcc00; 
+  }
+}
+@media (min-width:1366px) and (max-width: 1479px) {
+  .bottomImage-leftSide{
+    max-width: 350px;
+    margin-bottom: 20%;
+    opacity: 80%;
+  }
+  .bottomImage-rightSide{
+    max-width: 350px;
+    margin-right: 20px;
+    opacity: 80%;
+  }
+  .join-text {
+    text-align: center;
+    padding: 20px 6px;
+  }
+
+
+
+}
+@media (min-width:1025px) and (max-width: 1365px) {
+  .join-text {
+    text-align: center;
+    margin-right: 30px;
+  }
+  .join-image {
+    display: none;
+  }
+
+}
+
+@media (min-width:1680px) and (max-width: 2580px) {
+  .join-text {
+    text-align: center;
+    padding: 20px 6px;
+  }
+
+}
+@media (min-width:1480px) and (max-width: 1680px) {
+  .bottomImage-leftSide{
+    max-width: 350px;
+  }
+  .bottomImage-rightSide{
+    max-width: 350px;
+    margin-right: 60px;
+  }
+  .join-text {
+    text-align: center;
+    padding: 20px 6px;
+  }
+
 }
 @media (max-width: 1180px) {
   /* Header */
@@ -951,7 +1173,7 @@ body{
   }
 
   /* Contact section */
-  .contact-section {
+  .contact-wrapper {
     flex-direction: column;
     align-items: center;
     padding: 20px;
@@ -1059,15 +1281,32 @@ body{
   }
 
   /* Contact section */
-  .contact-section {
+  .contact-wrapper {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     padding: 20px;
     overflow: hidden;
   }
   .contact-info, .contact-form {
     max-width: 100%;
-    margin-bottom: 20px;
+    margin: 0;                   /* Remove side margins */
+    text-align: center;  
+  }
+
+  .form-card {
+    width: 100%; 
+    padding: 20px;
+    align-items: center;
+  }
+   .contact-card {
+    flex-direction: column;      /* Stack inside the card too */
+    align-items: stretch;
+    padding: 20px;
+  }
+  .contactus-card {
+    flex-direction: column;      /* Stack inside the card too */
+    align-items: stretch;
+    padding: 20px;
   }
   .bottom-left-image {
     bottom: 10px;
@@ -1077,7 +1316,6 @@ body{
     display: none;
   }
 }
-
 
 /* Mobile-specific adjustments (max-width: 600px) */
 @media (max-width: 600px) {
@@ -1141,9 +1379,30 @@ body{
     color: #e0b400; /* Set the text color to yellow */
     text-decoration: none; /* Remove the underline if not required */
   }
-  
+
+  .form-card {
+    width: 100%; 
+    padding: 20px;
+    align-items: center;
+  }
+   .contact-card {
+    flex-direction: column;      /* Stack inside the card too */
+    align-items: center;
+    padding: 20px;
+    margin-left: -5px;
+    
+  }
+  .contactus-card {
+    flex-direction: column;      /* Stack inside the card too */
+    align-items: stretch;
+    padding: 20px;
+    margin-left: -5px;
+  }
+
   
 }
+
+
 
 /* Mobile-specific adjustments (max-width: 480px) */
 @media (max-width: 480px) {
@@ -1163,11 +1422,20 @@ body{
   }
   /* Reduce padding for better spacing */
   .header {
-    padding: 8px 10px;
+    padding:0px 20px 0px 20px;
   }
   .main-section, .company-section, .join-section, .contact-section {
     padding: 10px;
     overflow: hidden;
+  }
+
+  .logo img {
+    height: 85px;
+    width: auto;
+    
+  }
+  .hamburger {
+    font-size: 22px; /* Slightly smaller icon */
   }
 
   /* Button scaling */
@@ -1178,6 +1446,15 @@ body{
   .join-info {
     padding: 15px;
   }
+  .join-text h1{
+    margin-right: 50px;
+    margin-left: -80px;
+  }
+  .join-text p{
+    margin-top: 30px;
+  }
+ 
+
 
   /* Image adjustments */
   .main-image, .goal-image, .join-image {
@@ -1241,6 +1518,7 @@ body{
   }
 
 }
+
 footer{
   display: flex;
   background-color: #222;
@@ -1252,6 +1530,22 @@ footer p{
   margin-left: auto;
   margin-right: auto;
 }
+
+.modal-content {
+    padding: 39px 28px;
+    font-size: 14px;
+  }
+
+  .modal-content p {
+    font-size: 18px;
+    font-weight:700;
+  }
+
+  .modal-content button {
+    width: 40%;
+    padding: 12px 0;
+    font-size: 14px;
+  }
 
 /* Hamburger Icon */
 .hamburger {
@@ -1266,6 +1560,37 @@ footer p{
 @media (max-width: 1366px) {
   .hamburger {
     display: block;
+  }
+  .header{
+    padding: 0px 40px;
+  }
+
+  .bottomImage-leftSide, .bottomImage-rightSide{
+    display: none;
+  }
+  .logo img {
+    height: 100px;
+    width: 140px;
+    margin-left: -20px;
+    margin-top: 10px;
+    
+  }
+  
+
+  .form-card {
+    width: 100%; 
+    padding: 20px;
+    align-items: center;
+  }
+   .contact-card {
+    flex-direction: column;      /* Stack inside the card too */
+    align-items: center;
+    padding: 20px;
+  }
+  .contactus-card {
+    flex-direction: column;      /* Stack inside the card too */
+    align-items: stretch;
+    padding: 20px;
   }
 
   .nav {
@@ -1302,24 +1627,35 @@ footer p{
   }
 }
 
+
+
 @media (max-width: 480px) {
   .header{
     background-color: #faf5ed;
   }
 
   .logo img {
-    
-    height: 100px;
-    width: 230px;
-    margin-left: -70px;
-    
+    height: 75px;
+    width: auto;
+    margin-left: -30px;
   }
   .hamburger {
-    font-size: 24px; /* Slightly smaller icon */
+    font-size: 22px; /* Slightly smaller icon */
   }
+  .join-h1 {
+    margin-right: 40px;
+    margin-bottom: -30px;
+  }
+  .newsletter {
+    margin-top: -10px;
+  }
+
 
   .nav {
     top: 110px; /* Adjusted for smaller header */
+  }
+  .bottomImage-leftSide, .bottomImage-rightSide{
+    display: none;
   }
 
   .nav button {
@@ -1334,20 +1670,24 @@ footer p{
   }
 }/* Media Query for iPad, iPad Air, and iPad Pro */
 
+
 /* iPad (including iPad Air, iPad Pro in portrait mode) */
 @media (min-width: 768px) and (max-width: 1024px) {
   /* General Layout Adjustments */
   .header {
-    padding: 20px 30px;
+    padding: 1px 40px;
     color: #fbedce;
+  }
+  .logo {
+    align-items: center;
+    text-align: center;
   }
   .logo img {
     height: 130px;
-    width: 320px;
-    margin-left: -85px;
+    width: auto;
   }
   .hamburger {
-    font-size: 26px;
+    font-size: 28px;
   }
   
   /* Main Section */
@@ -1413,6 +1753,7 @@ footer p{
     flex-direction: column;
     text-align: center;
     padding: 30px;
+    margin-bottom: -70px;
   }
   .join-text {
     max-width: 90%;
@@ -1423,9 +1764,15 @@ footer p{
     font-size: 56px;
     margin-left: 0;
   }
+  .join-h1 {
+    margin-right: 450px;
+    margin-left: -100px;
+  }
   .join-info {
     max-width: 100%;
     padding: 20px;
+    margin-bottom: -10px;
+    margin-right: -20pxx;
   }
   .join-image {
     width: 100%;
@@ -1433,16 +1780,13 @@ footer p{
   }
 
   /* Contact Section */
-  .contact-section {
+  .contact-wrapper {
     flex-direction: column;
     align-items: center;
-    padding: 30px;
+    padding: 20px;
+    gap: 20px;
   }
-  .contact-info,
-  .contact-form {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
+  
   .contact-info{
     font-size: 30px;
   }
@@ -1453,6 +1797,9 @@ footer p{
     left: 50px;
     
   }
+ 
+
+  
   a {
     color: #e0b400; /* Set the text color to yellow */
     text-decoration: none; /* Remove the underline if not required */
@@ -1470,15 +1817,24 @@ footer p{
       margin-left: 250px;
   
     }
+    
 }
 @media (max-width: 800px){
   .join-text p {
     margin-left: 2px;
   }
+  .bottomImage-rightSide,
+  .bottomImage-leftSide{
+    display: none;
+  }
 }
 @media (max-width: 1024px){
   .join-text p {
     margin-left: 2px;
+  }
+  .bottomImage-rightSide,
+  .bottomImage-leftSide{
+    display: none;
   }
 }
 @media (max-width: 480px) {
@@ -1502,6 +1858,9 @@ footer p{
 .join-text p{
   font-size: 20px;
 }
+.join-h1 {
+  margin-left: 13px;
+}
 
 a {
   color: #e0b400; /* Set the text color to yellow */
@@ -1517,6 +1876,9 @@ a {
     margin-bottom: -200px;
   }
 
+  .bottomImage-leftSide, .bottomImage-rightSide{
+    display: none;
+  }
 
 
 
