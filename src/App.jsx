@@ -44,14 +44,35 @@ function App() {
     setMenuOpen(!menuOpen);
   };
   
-  useEffect(() => {
-  window.addEventListener("load", () => {
-    if (window.location.hash) {
-      // clear hash after page loads
-      history.replaceState(null, null, window.location.pathname);
-    }
-  });
+useEffect(() => {
+  if ("scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+  }
+  window.scrollTo({ top: 0, behavior: "auto" });
+
+  setTimeout(() => {
+    history.replaceState(null, null, window.location.pathname);
+  }, 50);
 }, []);
+
+
+useEffect(() => {
+  const handlePopState = () => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash) {
+      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+  window.addEventListener("popstate", handlePopState);
+  return () => {
+    window.removeEventListener("popstate", handlePopState);
+  };
+}, []);
+
+
+
 
   const validateEmail = (email) => {
     // Step 1: check basic format (something@something.something)
@@ -218,7 +239,16 @@ function App() {
   return (
     <>
       <header className="header">
-        <div className="logo">
+        <div 
+          className="logo"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            window.history.pushState("", document.title, window.location.pathname);
+            
+          }}
+          style={{ cursor: "pointer" }}
+        
+        >
           <img src={ME} alt="Logo" />
         </div>
         <button className="hamburger" onClick={toggleMenu}>
@@ -499,7 +529,7 @@ function App() {
               <img
                 src={me13}
                 alt="Instagram Logo"
-                className="icon"
+                className="insta-icon"
               />
             
               <a
