@@ -17,9 +17,9 @@ import businessImage3 from "./businessImage3.png";
 import emailLogo from "./emailLogo.png";
 import businessImage1 from "./businessImageRight.png";
 import errorImage from "./errorImage.png";
-import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';
-import { parsePhoneNumberFromString } from 'libphonenumber-js';
+import "react-phone-number-input/style.css";
+import PhoneInput, { isValidPhoneNumber, parsePhoneNumber } from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 
 
@@ -30,9 +30,9 @@ function App() {
     lastName: "",
     email: "",
     phoneNumber: "",
-    countryCode: "IN",
+    countryCode: "",
     message: "",
-    
+
   });
 
   const [errors, setErrors] = useState({});
@@ -44,7 +44,7 @@ function App() {
   const [showContactModal, setShowContactModal] = useState(false);
 
   const [menuOpen, setMenuOpen] = useState(false);
-  const previousCountryRef = useRef(formData.countryCode);
+  const previousCountryRef = useRef("");
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -125,10 +125,7 @@ function App() {
       newErrors.email = emailError;
     }
     try {
-      const cleanedNumber = formData.phoneNumber.replace(/[\s-]/g, "");
-      const phoneNumber = parsePhoneNumberFromString("+" + cleanedNumber); // must start with +
-
-      if (!phoneNumber || !phoneNumber.isValid()) {
+      if (!isValidPhoneNumber(formData.phoneNumber)) {
         newErrors.phoneNumber = true;
       }
     } catch (err) {
@@ -138,6 +135,41 @@ function App() {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0; // return true if no errors
   };
+  
+  const handlePhoneChange = (value) => {
+    if (!value) {
+      setFormData({
+        ...formData,
+        phoneNumber: "",
+        countryCode: "",
+      });
+      previousCountryRef.current = "";
+      return;
+    }
+
+    try {
+      const parsed = parsePhoneNumber(value);
+      const newCountryCode = parsed?.country || previousCountryRef.current || "";
+
+      if (previousCountryRef.current !== newCountryCode) {
+        previousCountryRef.current = newCountryCode;
+      }
+
+      setFormData({
+        ...formData,
+        phoneNumber: value,
+        countryCode: newCountryCode,
+      });
+    } catch {
+      setFormData({
+        ...formData,
+        phoneNumber: value,
+        countryCode: "",
+      });
+    }
+  };
+
+
 
   const newsletterValidate = () => {
     let newError = {};
@@ -489,49 +521,21 @@ function App() {
               </div>
               <div className="form-row">
                 <PhoneInput
-                  country={'in'} // default country
+                  placeholder="Enter phone number"
                   value={formData.phoneNumber}
-                  placeholder="+91 22574-33475"
-                  onChange={(phone, countryData) => {
-                    const newCountryCode = countryData.countryCode?.toUpperCase() || "";
-                    const dialCode = countryData.dialCode || "";
-
-                    // Always store clean digits (no +)
-                    const cleaned = phone.replace(/^\+/, "");
-
-                    // Country changed — reset number
-                    if (
-                      previousCountryRef.current &&
-                      previousCountryRef.current !== newCountryCode
-                    ) {
-                      setFormData({
-                        ...formData,
-                        phoneNumber: dialCode,
-                        countryCode: newCountryCode,
-                      });
-                      previousCountryRef.current = newCountryCode;
-                    } else {
-                      // Same country — update normally
-                      setFormData({
-                        ...formData,
-                        phoneNumber: cleaned,
-                        countryCode: newCountryCode,
-                      });
-                    }
-                  }}
-                  inputStyle={{
-                    width: '100%',
-                    height: '42px',
-                    borderRadius: '8px',
-                    border: '1px solid #ddd',
-                    background: '#faf4ec',
-                    fontSize: '1rem',
-                  }}
-                  buttonStyle={{
-                    border: '1px solid #ddd',
-                    background: '#faf4ec',
-                    borderTopLeftRadius: '8px',
-                    borderBottomLeftRadius: '8px',
+                  onChange={handlePhoneChange}
+                  international
+                  limitMaxLength
+                  numberInputProps={{
+                    style: {
+                      width: "100%",
+                      height: "42px",
+                      borderRadius: "8px",
+                      border: "1px solid #ddd",
+                      background: "#faf4ec",
+                      fontSize: "1rem",
+                      paddingLeft: "12px",
+                    },
                   }}
                 />
                 {errors.phoneNumber && (
