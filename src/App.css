@@ -651,6 +651,52 @@ a {
   flex: 1;
 }
 
+/* 📞 Phone input container */
+.react-international-phone-input {
+  background-color: #faf4ec;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: #000;
+  transition: box-shadow 0.3s ease;
+}
+
+/* 🏳️ Flag dropdown */
+.react-international-phone-country-selector-button {
+  background-color: #faf4ec;
+  border-right: 1px solid #ddd;
+  border-radius: 8px 0 0 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* 🏳️ Hover and open state */
+.react-international-phone-country-selector-button:hover,
+.react-international-phone-country-selector-button.open {
+  background-color: #f2e8d5;
+}
+
+/* 🔽 Country list dropdown */
+.react-international-phone-country-selector-dropdown {
+  background-color: #faf4ec;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: #000;
+}
+
+/* 🌍 Country row hover and highlight */
+.react-international-phone-country-selector-dropdown-option:hover,
+.react-international-phone-country-selector-dropdown-option.highlighted {
+  background-color: #fde588;
+  color: #000;
+}
+
+/* ✏️ Input focus */
+.react-international-phone-input:focus-within {
+  border-color: #ffa200;
+  box-shadow: 0 0 4px rgba(255, 162, 0, 0.3);
+}
+
+
+
 
 .error-image {
   width: 20px;

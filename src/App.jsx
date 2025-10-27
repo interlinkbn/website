@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./App.css";
 import ME from "./logo.png";
 import ME2 from "./right2.png";
@@ -17,6 +17,10 @@ import businessImage3 from "./businessImage3.png";
 import emailLogo from "./emailLogo.png";
 import businessImage1 from "./businessImageRight.png";
 import errorImage from "./errorImage.png";
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
+
 
 
 
@@ -26,6 +30,7 @@ function App() {
     lastName: "",
     email: "",
     phoneNumber: "",
+    countryCode: "IN",
     message: "",
     
   });
@@ -39,37 +44,38 @@ function App() {
   const [showContactModal, setShowContactModal] = useState(false);
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const previousCountryRef = useRef(formData.countryCode);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
   
-useEffect(() => {
-  if ("scrollRestoration" in window.history) {
-    window.history.scrollRestoration = "manual";
-  }
-  window.scrollTo({ top: 0, behavior: "auto" });
-
-  setTimeout(() => {
-    history.replaceState(null, null, window.location.pathname);
-  }, 50);
-}, []);
-
-
-useEffect(() => {
-  const handlePopState = () => {
-    const hash = window.location.hash.replace("#", "");
-    if (hash) {
-      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
     }
-  };
-  window.addEventListener("popstate", handlePopState);
-  return () => {
-    window.removeEventListener("popstate", handlePopState);
-  };
-}, []);
+    window.scrollTo({ top: 0, behavior: "auto" });
+
+    setTimeout(() => {
+      history.replaceState(null, null, window.location.pathname);
+    }, 50);
+  }, []);
+
+
+  useEffect(() => {
+    const handlePopState = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (hash) {
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
 
 
 
@@ -118,7 +124,14 @@ useEffect(() => {
     if (emailError) {
       newErrors.email = emailError;
     }
-    if (!/^\d{10}$/.test(formData.phoneNumber)) {
+    try {
+      const cleanedNumber = formData.phoneNumber.replace(/[\s-]/g, "");
+      const phoneNumber = parsePhoneNumberFromString("+" + cleanedNumber); // must start with +
+
+      if (!phoneNumber || !phoneNumber.isValid()) {
+        newErrors.phoneNumber = true;
+      }
+    } catch (err) {
       newErrors.phoneNumber = true;
     }
 
@@ -146,10 +159,11 @@ useEffect(() => {
     }));
 
     setErrors((prevErrors) => ({
-    ...prevErrors,
-    [name]: "",
-  }));
+      ...prevErrors,
+      [name]: "",
+    }));
   };
+
 
   const handleNewsletterChange = (e) => {
     const { value } = e.target;
@@ -181,13 +195,14 @@ useEffect(() => {
       const result = await response.json(); 
 
       if (response.ok) {
-         setContactModalMessage("Your message has been sent successfully!");
-         setShowContactModal(true);
+        setContactModalMessage("Your message has been sent successfully!");
+        setShowContactModal(true);
         setFormData({
           firstName: "",
           lastName: "",
           email: "",
           phoneNumber: "",
+          countryCode:"",
           message: "",
         });
       } else {
@@ -473,19 +488,54 @@ useEffect(() => {
                 )}
               </div>
               <div className="form-row">
-                <input
-                  type="text"
-                  name="phoneNumber"
-                  placeholder="Phone Number"
+                <PhoneInput
+                  country={'in'} // default country
                   value={formData.phoneNumber}
-                  onChange={handleChange}
+                  placeholder="+91 22574-33475"
+                  onChange={(phone, countryData) => {
+                    const newCountryCode = countryData.countryCode?.toUpperCase() || "";
+                    const dialCode = countryData.dialCode || "";
+
+                    // Always store clean digits (no +)
+                    const cleaned = phone.replace(/^\+/, "");
+
+                    // Country changed — reset number
+                    if (
+                      previousCountryRef.current &&
+                      previousCountryRef.current !== newCountryCode
+                    ) {
+                      setFormData({
+                        ...formData,
+                        phoneNumber: dialCode,
+                        countryCode: newCountryCode,
+                      });
+                      previousCountryRef.current = newCountryCode;
+                    } else {
+                      // Same country — update normally
+                      setFormData({
+                        ...formData,
+                        phoneNumber: cleaned,
+                        countryCode: newCountryCode,
+                      });
+                    }
+                  }}
+                  inputStyle={{
+                    width: '100%',
+                    height: '42px',
+                    borderRadius: '8px',
+                    border: '1px solid #ddd',
+                    background: '#faf4ec',
+                    fontSize: '1rem',
+                  }}
+                  buttonStyle={{
+                    border: '1px solid #ddd',
+                    background: '#faf4ec',
+                    borderTopLeftRadius: '8px',
+                    borderBottomLeftRadius: '8px',
+                  }}
                 />
                 {errors.phoneNumber && (
-                  <img
-                    src={errorImage}
-                    alt="Error"
-                    className="error-image"
-                  />
+                  <img src={errorImage} alt="Error" className="error-image" />
                 )}
               </div>
                 <textarea
