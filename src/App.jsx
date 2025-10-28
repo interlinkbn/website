@@ -49,6 +49,29 @@ function App() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const nav = document.querySelector('.nav');
+      const hamburger = document.querySelector('.hamburger');
+      
+      if (menuOpen && nav && hamburger && 
+          !nav.contains(event.target) && 
+          !hamburger.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [menuOpen]);
   
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
@@ -299,7 +322,7 @@ function App() {
           <img src={ME} alt="Logo" />
         </div>
         <button className="hamburger" onClick={toggleMenu}>
-        {menuOpen ? "✖" : "☰"} {/* Change between ☰ and ✖ */}
+        ☰
         </button> 
         <nav className={`nav ${menuOpen ? "active" : ""}`}>
           <button
