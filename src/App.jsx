@@ -19,7 +19,7 @@ import businessImage1 from "./businessImageRight.png";
 import errorImage from "./errorImage.png";
 import "react-phone-number-input/style.css";
 import PhoneInput, { isValidPhoneNumber, parsePhoneNumber } from "react-phone-number-input";
-import "react-phone-number-input/style.css";
+
 
 
 
