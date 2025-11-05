@@ -389,6 +389,65 @@ section {
   z-index: 1; /* Higher z-index to appear on top */
 }
 
+.table-wrapper {
+  width: 100%;
+  min-width: 300px;
+  max-width: 800px;
+  overflow-x: auto;
+  margin-left: 5%;
+  margin-top: 7%;
+  border: .2px solid #f0f0f0;
+  padding: 30px;
+  border-radius: 35px;
+  background:#f8f1e5;
+}
+
+.table-wrapper table {
+  width: 100%;
+  border-collapse:collapse;
+  border: #000;
+  background: #f8f1e5;
+  border-radius: 35px;
+
+}
+
+.table-wrapper thead th {
+  padding: 20px 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: .1px solid #c7c7c7;
+  border-right: .2px solid #c7c7c7;
+}
+
+.table-wrapper thead th:last-child {
+  border: none;
+}
+
+/* .table-wrapper .logo-header {
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+} */
+
+.table-wrapper tbody td {
+  padding: 20px 1px;
+  text-align: center;
+  border: 1px solid #c7c7c7;
+}
+
+.table-wrapper tbody td:first-child {
+  border-left: none;
+}
+
+.table-wrapper tbody td:last-child {
+  border-right: none;
+}
+
 /* Join Us Section */
 .join-section {
   padding: 60px 10px;
@@ -464,7 +523,9 @@ section {
 }
 
 .join-text {
-  margin-left: 30%;
+  margin-left: 40%;
+  margin-right: 30%;
+  margin-top: -20%;
 }
 
 .join-text p {
@@ -511,6 +572,8 @@ section {
   width: 550px; /* Set width as needed */
   height: 600px; /* Set height as needed */
   margin-bottom: -60px;
+  margin-left: 76%;
+  margin-top: -30%;
 }
 a {
     color: #e0b400; /* Set the text color to yellow */
@@ -1083,6 +1146,11 @@ body{
     margin-left: 0;
   }
 
+  .table-wrapper {
+    margin-left: 0px;
+    margin-top: 80px;
+  }
+
   /* Contact section */
   .contact-wrapper {
     flex-direction: column;
@@ -1133,7 +1201,19 @@ body{
   }
   .join-text {
     text-align: center;
-    padding: 20px 6px;
+    padding: 20px 25px;
+    margin-left: 400px;
+    margin-top: -30%;
+  }
+  .join-image {
+    margin-right: -1%;
+    margin-top: -40%;
+  }
+
+  .table-wrapper {
+    margin-left: 1%;
+    max-width: 600px;
+    margin-top: 10%;
   }
 
 
@@ -1147,6 +1227,7 @@ body{
   .join-image {
     display: none;
   }
+
 
 }
 
@@ -1458,6 +1539,9 @@ body{
   .join-section{
     margin-top: 100px;
   }
+  .table-wrapper {
+    display: none;
+  }
 
   /* Button scaling */
   .nav button {
@@ -1572,6 +1656,9 @@ body{
   }
   .join-text p{
     margin-top: 30px;
+  }
+  .table-wrapper {
+    display: none;
   }
  
 
@@ -1792,6 +1879,10 @@ footer p{
     margin-top: -10px;
   }
 
+  .table-wrapper {
+    display: none;
+  }
+
 
   .nav {
     top: 100px; /* Adjusted for smaller header */
@@ -1922,11 +2013,19 @@ footer p{
     max-width: 100%;
     padding: 20px;
     margin-bottom: -10px;
-    margin-right: -20pxx;
+    margin-right: -20px;
   }
   .join-image {
     width: 100%;
     height: auto;
+  }
+
+  .table-wrapper {
+    width: 90%;
+    max-width: 1000px;
+    height: 350px;
+    margin-top: 120px;
+    margin-left: 40px;
   }
 
   /* Contact Section */
