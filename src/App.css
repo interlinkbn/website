@@ -308,6 +308,7 @@ section {
   justify-content: space-between;
   background-color: #faf5ed;
   text-align: left;
+  margin-top: -5%;
 }
 .g {
   color: #e0b400;
@@ -392,37 +393,29 @@ section {
 .table-wrapper {
   width: 100%;
   min-width: 300px;
-  max-width: 800px;
+  max-width: 950px;
   overflow-x: auto;
-  margin-left: 5%;
+  margin-left:2%;
   margin-top: 7%;
-  border: .2px solid #f0f0f0;
-  padding: 30px;
-  border-radius: 35px;
-  background:#f8f1e5;
 }
 
 .table-wrapper table {
   width: 100%;
   border-collapse:collapse;
-  border: #000;
-  background: #f8f1e5;
+  background: #fff7ebff;
   border-radius: 35px;
-
+  border: 2px solid #333;
 }
 
 .table-wrapper thead th {
-  padding: 20px 15px;
+  padding: 30px 15px;
   text-align: center;
   font-size: 18px;
   font-weight: 600;
-  border-bottom: .1px solid #c7c7c7;
-  border-right: .2px solid #c7c7c7;
+  border: 2px solid #333;
 }
 
-.table-wrapper thead th:last-child {
-  border: none;
-}
+
 
 /* .table-wrapper .logo-header {
   background: #333;
@@ -435,18 +428,12 @@ section {
 } */
 
 .table-wrapper tbody td {
-  padding: 20px 1px;
+  padding: 30px 100px;
   text-align: center;
-  border: 1px solid #c7c7c7;
+  border: 2px solid #333;
 }
 
-.table-wrapper tbody td:first-child {
-  border-left: none;
-}
 
-.table-wrapper tbody td:last-child {
-  border-right: none;
-}
 
 /* Join Us Section */
 .join-section {
