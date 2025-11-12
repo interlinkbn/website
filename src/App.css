@@ -393,7 +393,7 @@ section {
 .table-wrapper {
   width: 100%;
   min-width: 300px;
-  max-width: 950px;
+  max-width: 900px;
   overflow-x: auto;
   margin-left:2%;
   margin-top: 7%;
@@ -415,17 +415,6 @@ section {
   border: 2px solid #333;
 }
 
-
-
-/* .table-wrapper .logo-header {
-  background: #333;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-weight: bold;
-  font-size: 16px;
-  display: inline-block;
-} */
 
 .table-wrapper tbody td {
   padding: 30px 100px;
@@ -1197,11 +1186,36 @@ body{
     margin-top: -40%;
   }
 
-  .table-wrapper {
-    margin-left: 1%;
-    max-width: 600px;
-    margin-top: 10%;
-  }
+ .table-wrapper {
+  width: 40%;
+  min-width: 300px;
+  max-width: 900px;
+  overflow-x: auto;
+  margin-left:4%;
+  margin-top: 7%;
+}
+  .table-wrapper table {
+  width: 10%;
+  border-collapse:collapse;
+  background: #fff7ebff;
+  border-radius: 35px;
+  border: 2px solid #333;
+}
+
+.table-wrapper thead th {
+  padding: 30px 66px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  border: 2px solid #333;
+}
+
+
+.table-wrapper tbody td {
+  padding: 30px 66px;
+  text-align: center;
+  border: 2px solid #333;
+}
 
 
 
@@ -1930,6 +1944,7 @@ footer p{
     margin: 0;
     padding: 20px;
     font-size: 36px;
+    margin-top: 40px;
   }
   .main-image {
     width: 100%;
@@ -2008,12 +2023,35 @@ footer p{
   }
 
   .table-wrapper {
-    width: 90%;
-    max-width: 1000px;
-    height: 350px;
-    margin-top: 120px;
-    margin-left: 40px;
-  }
+  width: 100%;
+  min-width: 300px;
+  max-width: 900px;
+  overflow-x: auto;
+  margin-top: 13%;
+}
+
+.table-wrapper table {
+  width: 100%;
+  border-collapse:collapse;
+  background: #fff7ebff;
+  border-radius: 35px;
+  border: 2px solid #333;
+}
+
+.table-wrapper thead th {
+  padding: 30px 80px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  border: 2px solid #333;
+}
+
+
+.table-wrapper tbody td {
+  padding: 30px 80px;
+  text-align: center;
+  border: 2px solid #333;
+}
 
   /* Contact Section */
   .contact-wrapper {

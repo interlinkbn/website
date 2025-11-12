@@ -472,19 +472,7 @@ function App() {
                   <td></td>
                   <td></td>
                   <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
+                </tr>               
               </tbody>
             </table>
         </div>
