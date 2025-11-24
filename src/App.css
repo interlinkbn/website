@@ -308,7 +308,6 @@ section {
   justify-content: space-between;
   background-color: #faf5ed;
   text-align: left;
-  margin-top: -5%;
 }
 .g {
   color: #e0b400;
@@ -390,7 +389,7 @@ section {
   z-index: 1; /* Higher z-index to appear on top */
 }
 
-.table-wrapper {
+/* .table-wrapper {
   width: 100%;
   min-width: 300px;
   max-width: 900px;
@@ -420,7 +419,7 @@ section {
   padding: 30px 100px;
   text-align: center;
   border: 2px solid #333;
-}
+} */
 
 
 
@@ -499,9 +498,7 @@ section {
 }
 
 .join-text {
-  margin-left: 40%;
-  margin-right: 30%;
-  margin-top: -20%;
+  margin-left: 30%;
 }
 
 .join-text p {
@@ -548,8 +545,6 @@ section {
   width: 550px; /* Set width as needed */
   height: 600px; /* Set height as needed */
   margin-bottom: -60px;
-  margin-left: 76%;
-  margin-top: -30%;
 }
 a {
     color: #e0b400; /* Set the text color to yellow */
@@ -1122,10 +1117,10 @@ body{
     margin-left: 0;
   }
 
-  .table-wrapper {
+  /* .table-wrapper {
     margin-left: 0px;
     margin-top: 80px;
-  }
+  } */
 
   /* Contact section */
   .contact-wrapper {
@@ -1177,16 +1172,10 @@ body{
   }
   .join-text {
     text-align: center;
-    padding: 20px 25px;
-    margin-left: 400px;
-    margin-top: -30%;
-  }
-  .join-image {
-    margin-right: -1%;
-    margin-top: -40%;
+    padding: 20px 6px;
   }
 
- .table-wrapper {
+ /* .table-wrapper {
   width: 40%;
   min-width: 300px;
   max-width: 900px;
@@ -1215,7 +1204,7 @@ body{
   padding: 30px 66px;
   text-align: center;
   border: 2px solid #333;
-}
+} */
 
 
 
@@ -1540,9 +1529,9 @@ body{
   .join-section{
     margin-top: 100px;
   }
-  .table-wrapper {
+  /* .table-wrapper {
     display: none;
-  }
+  } */
 
   /* Button scaling */
   .nav button {
@@ -1658,9 +1647,9 @@ body{
   .join-text p{
     margin-top: 30px;
   }
-  .table-wrapper {
+  /* .table-wrapper {
     display: none;
-  }
+  } */
  
 
 
@@ -1880,9 +1869,9 @@ footer p{
     margin-top: -10px;
   }
 
-  .table-wrapper {
+  /* .table-wrapper {
     display: none;
-  }
+  } */
 
 
   .nav {
@@ -2022,7 +2011,7 @@ footer p{
     height: auto;
   }
 
-  .table-wrapper {
+  /* .table-wrapper {
   width: 100%;
   min-width: 300px;
   max-width: 900px;
@@ -2051,7 +2040,7 @@ footer p{
   padding: 30px 80px;
   text-align: center;
   border: 2px solid #333;
-}
+} */
 
   /* Contact Section */
   .contact-wrapper {

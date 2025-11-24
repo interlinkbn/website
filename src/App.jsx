@@ -436,7 +436,7 @@ function App() {
       </section>
 
       <section className="join-section" id="join">
-        <div className="table-wrapper">
+        {/* <div className="table-wrapper">
             <table>
               <thead>
                 <tr>
@@ -475,7 +475,7 @@ function App() {
                 </tr>               
               </tbody>
             </table>
-        </div>
+        </div> */}
   
         <div className="join-text">
           <div className="join-h1">
